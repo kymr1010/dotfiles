@@ -1,0 +1,12 @@
+. $HOME/.config/bash/git-prompt.sh
+CYAN=`tput setaf 45`;
+RED=`tput setaf 1`;
+YELLOW=`tput setaf 11`;
+GREEN=`tput setaf 34`;
+BLUE=`tput setaf 27`;
+MAGENTA=`tput setaf 213`;
+WHITE=`tput setaf 7`;
+RESET=`tput sgr0`;
+BOLD=`tput bold`;
+
+export PS1='\n\[${CYAN}\]${debian_chroot:+($debian_chroot)}\u\[${RESET}${BOLD}\] \[${RED}\]>>\[${GREEN}\]> \[${CYAN}\]\w\[${RESET}\]$(__git_ps1 " (\[${MAGENTA}\]%s\[${RESET}\])")\n\[${BOLD}\]\$\[${RESET}\] '
