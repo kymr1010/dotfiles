@@ -12,6 +12,7 @@ vim.pack.add({
   'https://github.com/lewis6991/gitsigns.nvim.git',
   'https://github.com/sindrets/diffview.nvim.git',
   'https://github.com/akinsho/toggleterm.nvim.git',
+  'https://github.com/johnseth97/codex.nvim.git',
 })
 
 require('oil').setup({
@@ -52,3 +53,15 @@ require("toggleterm").setup{
   close_on_exit = true,
   shell = vim.o.shell,
 }
+
+require('codex').setup({
+  lazy = true,
+  opts = {
+    keymaps     = {},         -- Disable internal default keymap (<leader>cc -> :CodexToggle)
+    border      = 'rounded',  -- Options: 'single', 'double', or 'rounded'
+    width       = 0.8,        -- Width of the floating window (0.0 to 1.0)
+    height      = 0.8,        -- Height of the floating window (0.0 to 1.0)
+    model       = nil,        -- Optional: pass a string to use a specific model (e.g., 'o3-mini')
+    autoinstall = true,       -- Automatically install the Codex CLI if not found
+  }
+})
